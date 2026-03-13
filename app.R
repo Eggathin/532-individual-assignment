@@ -14,9 +14,9 @@ permits_df <- read_delim(
   delim = ";",
   show_col_types = FALSE
 ) |> mutate(
-  IssueDate               = as.Date(IssueDate),
+  IssueDate = as.Date(IssueDate),
   PermitNumberCreatedDate = as.Date(PermitNumberCreatedDate),
-  TypeOfWork              = trimws(as.character(TypeOfWork))
+  TypeOfWork = trimws(as.character(TypeOfWork))
 )
 
 area_choices <- c("All", sort(unique(na.omit(permits_df$GeoLocalArea))))
